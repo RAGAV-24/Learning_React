@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import AnimatedCursor from "react-animated-cursor"
 
 const SignIn = () => {
   const [form, setForm] = useState({ email: '', password: '' });
@@ -21,6 +22,38 @@ const SignIn = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
+         <AnimatedCursor
+      innerSize={8}
+      outerSize={8}
+      color='193, 11, 111'
+      outerAlpha={0.2}
+      innerScale={0.7}
+      outerScale={5}
+      clickables={[
+        'a',
+        'input[type="text"]',
+        'input[type="email"]',
+        'input[type="number"]',
+        'input[type="submit"]',
+        'input[type="image"]',
+        'label[for]',
+        'select',
+        'textarea',
+        'button',
+        '.link',
+        {
+          target: '.custom',
+          options: {
+            innerSize: 12,
+            outerSize: 12,
+            color: '255, 255, 255',
+            outerAlpha: 0.3,
+            innerScale: 0.7,
+            outerScale: 5
+          }
+        }
+      ]}
+    />
       <form
         onSubmit={handleSubmit}
         className="bg-white shadow-md rounded-lg p-8 max-w-sm w-full"
